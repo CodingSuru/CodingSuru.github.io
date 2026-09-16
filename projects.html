@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Project Log — Suryansh Singh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="archive-header">
+  <div class="hero-hud">
+    <span class="rec"><i></i> REC</span>
+    <span class="tc" id="tc">00:00:00:00</span>
+    <span class="res">4K · 23.976 fps</span>
+  </div>
+  <a href="index.html" class="back-link">← Back to Shot Log</a>
+  <p class="section-tag">Full Archive</p>
+  <h1>Every shot, logged</h1>
+  <p class="archive-lede">Every build in one place — the highlight-reel shots alongside the
+    parsers, forecasters, dashboards, and internal tools that never made it to LinkedIn.
+    Same habit, every frame.</p>
+</header>
+
+<main>
+  <section class="section archive-section">
+
+    <div class="bucket-grid">
+
+      <article class="bucket">
+        <p class="bucket-cat">Perception / Real-Time Tracking</p>
+        <h3>Perimeter Intrusion Detection &amp; Tracking</h3>
+        <p>Click-to-draw polygon zoning on a live stream; YOLO + ByteTrack for
+          persistent per-person IDs; ray-casting on centroid <em>and</em> foot
+          position to catch the exact frame a boundary is crossed.</p>
+        <p class="bucket-tags">YOLO · ByteTrack · Ray-Casting · Live Alerts</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Transportation / Traffic</p>
+        <h3>Stopped Vehicle Detection</h3>
+        <p>Pretrained YOLO vehicle detection fused with frame-differencing motion
+          scoring — five-plus consecutive static frames before a vehicle is flagged
+          as stopped, with persistent IoU-based ID tracking across the feed.</p>
+        <p class="bucket-tags">YOLOv11n · OpenCV · IoU Tracking</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Perception / Real-Time OCR</p>
+        <h3>Real-Time Number Plate Recognition</h3>
+        <p>Custom YOLO detector + OpenCV preprocessing (adaptive threshold, denoise,
+          contour filtering) feeding EasyOCR, with dedup and timestamped logging
+          across sessions.</p>
+        <p class="bucket-tags">YOLO · OpenCV · EasyOCR · Stream Processing</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Perception / State Estimation</p>
+        <h3>Pose Estimation Fall-Detection</h3>
+        <p>33-landmark pose tracking with custom joint-angle math to distinguish a
+          real fall from a bend or a crouch, confirmed over multiple frames to kill
+          false positives, with instant on-screen alerting.</p>
+        <p class="bucket-tags">MediaPipe · Angle Geometry · False-Positive Control</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Autonomous Navigation</p>
+        <h3>NEAT-Trained Self-Driving Car</h3>
+        <p>A car agent that learns to drive from five radar-style distance sensors
+          alone — no hand-coded rules — evolving its control network with NEAT
+          across five progressively harder tracks, carrying what it learned forward
+          from map to map.</p>
+        <p class="bucket-tags">NEAT · Evolutionary Neural Nets · Sensor-Driven Control</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Autonomous Decision-Making</p>
+        <h3>Snake — Deep Q-Network Agent</h3>
+        <p>DQN trained from scratch (no pretraining) on an 11-dimensional state,
+          experience replay, epsilon-greedy exploration — visible, measurable
+          learning from random flailing to expert play.</p>
+        <p class="bucket-tags">PyTorch · DQN · Experience Replay</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Safety-Critical Monitoring</p>
+        <h3>Fire &amp; Smoke Detection</h3>
+        <p>Custom-trained YOLOv8 on a self-annotated dataset for early flame and
+          smoke warning, tuned against hard cases — small flames, thick smoke —
+          rather than trusting off-the-shelf weights.</p>
+        <p class="bucket-tags">YOLOv8 · Custom Dataset · Early Warning</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">3D Spatial Reconstruction</p>
+        <h3>DICOM → Interactive 3D Web Viewer</h3>
+        <p>Pipeline converting raw CT/NIfTI slices into browser-native 3D meshes in
+          real time — HU-based tissue segmentation, Marching Cubes mesh generation,
+          Three.js viewer with live clipping planes and volume readouts.</p>
+        <p class="bucket-tags">DICOM · Three.js · cuCIM · Segmentation</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Model QA / Validation</p>
+        <h3>Brain CT — Logic vs. Model Study</h3>
+        <p>Co-authored research comparing a deterministic HU/symmetry/geometry system
+          against a CNN trained on 30,000+ DICOM scans, evaluated on identical inputs
+          across hemorrhage, asymmetry, mass-effect and fracture detection. The
+          rule-based system missed a hemorrhage the model caught — evidence for a
+          parallel-branch fusion architecture that flags disagreements for
+          radiologist review instead of guessing.</p>
+        <p class="bucket-tags">Logic vs. Deep Learning · 30k+ DICOM Scans · Hybrid Architecture</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Security / Surveillance</p>
+        <h3>Visual Analysis Model (Multi-Detection Suite)</h3>
+        <p>The earlier, smaller version of the industrial CV suite — sub-models for
+          PPE, fire/smoke, stopped vehicles, perimeter intrusion, intruders, falls
+          and armed-person detection, integrated and tested live against CCTV.</p>
+        <p class="bucket-tags">Python · CCTV Integration · Multi-Model</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Security / Surveillance</p>
+        <h3>IPCrowdSense</h3>
+        <p>Crowd counting off RTSP IP camera feeds using YOLOv11, with a configurable
+          "max persons allowed" boundary — ray-casting to flag violations and log
+          severity to a dashboard.</p>
+        <p class="bucket-tags">YOLOv11 · RTSP · Ray-Casting</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Automation / Lead-Gen</p>
+        <h3>Business Search &amp; Mapping Application</h3>
+        <p>Flask app for searching businesses by industry and radius against the
+          Google Maps API, with interactive map/list views and lead storage to JSON.</p>
+        <p class="bucket-tags">Flask · Google Maps API · JSON</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Automation / Lead-Gen</p>
+        <h3>AI Lead-Generation Engine</h3>
+        <p>Product-aware B2B lead engine: feed it a product's own documents and it
+          builds a structured ICP, then discovers and classifies prospects from the
+          open web — separating real buyer companies from competitors, articles and
+          generic inboxes — before scoring product fit and exporting qualified leads
+          with a "why this lead" rationale attached to each one.</p>
+        <p class="bucket-tags">Python · LLM-Driven ICP · Lead Scoring Pipeline</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Data Engineering / Parsing</p>
+        <h3>Resume Parser</h3>
+        <p>Extracted structured fields — name, father's name, gender, DOB, language,
+          education, experience, key skills — from raw resumes; built a multi-upload
+          API and benchmarked output against a colleague's parser and sample data.</p>
+        <p class="bucket-tags">Python · Pandas · openpyxl · Regex</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Data Engineering / Parsing</p>
+        <h3>Bank Transaction Parser</h3>
+        <p>Rules-based parser for bank transaction narrations pulled from Excel —
+          isolating transaction mode, party name, reference number and remarks — with
+          clean output written back to a new workbook.</p>
+        <p class="bucket-tags">Python · Pandas · openpyxl · Regex</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Analytics / Forecasting</p>
+        <h3>Forecasting Model</h3>
+        <p>Business-metrics forecasting model refined against live SQL table data and
+          senior feedback, exposed through tested API endpoints rather than a
+          notebook-only exercise.</p>
+        <p class="bucket-tags">Python · SQL · API Integration</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Analytics / Forecasting</p>
+        <h3>Sales Forecasting &amp; Data Analysis</h3>
+        <p>Flask tool wrapping a Random Forest Regressor over Excel sales data, with
+          company/date selection, forecast display, and an Oracle DB layer underneath
+          for storage and retrieval.</p>
+        <p class="bucket-tags">Flask · scikit-learn · Oracle DB</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Analytics / Dashboards</p>
+        <h3>Sales Data Analytics &amp; Visualization Platform</h3>
+        <p>Dash-based dashboard for sales data with filters by state, city, customer
+          and date range, generating bar/pie/line/area charts and KPIs, backed by
+          SQLAlchemy.</p>
+        <p class="bucket-tags">Dash · SQLAlchemy · Matplotlib</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Analytics / Dashboards</p>
+        <h3>ERP Sales Dashboard (Dash &amp; Oracle)</h3>
+        <p>Multi-page ERP-style dashboard covering sales, inventory, payroll and
+          configuration, with dynamic SQL against Oracle, Plotly charts, and export
+          to Excel/PDF.</p>
+        <p class="bucket-tags">Dash · Oracle DB · Plotly</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Communication / Automation</p>
+        <h3>Mail AI Agent</h3>
+        <p>Self-hosted email agent suite — a rich HTML sender with inline (CID)
+          images and reusable templates, a bulk promotional mailer, an IMAP inbox
+          reader with structured per-folder logging, and a header/deliverability
+          layer specifically tuned to land in Primary rather than Promotions or
+          Spam.</p>
+        <p class="bucket-tags">Python · SMTP/IMAP · Email Deliverability</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Training Data / Automation</p>
+        <h3>Auto-Labeling Engine ("2-Click" CV Pipeline)</h3>
+        <p>Zero-human polygon &amp; bounding-box generation at scale — up to 70,000
+          images per batch, under an hour — built for wildlife drone footage and
+          satellite imagery where manual labeling was the real bottleneck.</p>
+        <p class="bucket-tags">Auto-Segmentation · Batch Processing · Drone/Satellite</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Agentic AI / Code Generation</p>
+        <h3>Multi-Agent Full-Stack Code Generator</h3>
+        <p>Coordinator-agent architecture that parses a plain-language brief and
+          delegates to specialised frontend, backend and data-viz agents to produce
+          a working app — Notes app, dashboard, or world clock — end to end.</p>
+        <p class="bucket-tags">Python · Multi-Agent · Node.js/Express</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Data Science / ML Fundamentals</p>
+        <h3>Iris Flower Classification</h3>
+        <p>Classic KNN classification exercise on the Iris dataset — exploratory
+          visualization, preprocessing, and species prediction, done properly rather
+          than skipped as "too basic to matter."</p>
+        <p class="bucket-tags">Python · scikit-learn · Seaborn</p>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="footer">
+  <div class="footer-top">
+    <p class="section-tag light">Roll Credits</p>
+    <h2>Let's talk shot boundaries.</h2>
+    <p class="footer-note">Available full-time, ready to interview, short notice period.
+      Based in Uttar Pradesh, India — comfortable working async against PST hours.</p>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:suruswork395@gmail.com">suruswork395@gmail.com</a>
+    <a href="tel:+918933996581">+91 89339 96581</a>
+    <a href="https://linkedin.com/in/suryansh-singh-5857a0263" target="_blank" rel="noopener">linkedin.com/in/suryansh-singh</a>
+  </div>
+  <p class="footer-end">Bachelor of Computer Applications — AI &amp; ML, Galgotias University · 2022–2025</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

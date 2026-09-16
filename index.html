@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suryansh Singh — Frame-Level AI/CV Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- SCRUBBER NAV -->
+<nav class="scrubber" aria-label="Section navigation">
+  <div class="scrubber-track">
+    <button class="mark" data-target="#log" style="left:5%"><span>SUMMARY</span></button>
+    <button class="mark" data-target="#edl" style="left:22%"><span>EDL — EXPERIENCE</span></button>
+    <button class="mark" data-target="#buckets" style="left:39%"><span>SCENE BUCKETS</span></button>
+    <button class="mark" data-target="#skills" style="left:56%"><span>CORE SKILLS</span></button>
+    <button class="mark" data-target="#detail" style="left:73%"><span>FRAME-BY-FRAME</span></button>
+    <button class="mark" data-target="#contact" style="left:93%"><span>CONTACT</span></button>
+    <div class="playhead" id="playhead"></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-hud">
+    <span class="rec"><i></i> REC</span>
+    <span class="tc" id="tc">00:00:00:00</span>
+    <span class="res">4K · 23.976 fps</span>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-main">
+      <p class="hero-eyebrow">Shot #001 — IN 09 : 2022</p>
+      <h1>Suryansh Singh</h1>
+      <p class="hero-role">AI / ML Engineer — Computer Vision, Real-Time Systems &amp; Autonomous Agents</p>
+      <p class="hero-lede">I build systems that watch a video feed and decide, frame by frame,
+        when a vehicle has stopped, when someone has fallen, when a boundary's been crossed,
+        when a tumor's edge actually sits where the model says it does. That habit — frame-level
+        precision, real-time state tracking, an appetite for the edge case — is what I bring to
+        any problem I take on, and it's exactly what I'm building toward next: perception and
+        decision-making for systems that have to act on that judgment in the physical world.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Get in touch</a>
+        <a href="https://linkedin.com/in/suryansh-singh-5857a0263" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="monitor" aria-hidden="true">
+      <div class="monitor-bar">
+        <span>CAM 01</span><span>LIVE</span>
+      </div>
+      <div class="monitor-frame">
+        <img src="profile.png" alt="Suryansh Singh">
+        <span class="bracket tl"></span><span class="bracket tr"></span>
+        <span class="bracket bl"></span><span class="bracket br"></span>
+      </div>
+      <div class="monitor-bar bottom">
+        <span>1080×1304</span><span id="mtc">00:00:00:00</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-strip" aria-hidden="true">
+    <div class="frame-chip"></div><div class="frame-chip"></div><div class="frame-chip cut"></div>
+    <div class="frame-chip"></div><div class="frame-chip"></div><div class="frame-chip dissolve"></div>
+    <div class="frame-chip"></div><div class="frame-chip"></div><div class="frame-chip"></div>
+    <div class="frame-chip cut"></div><div class="frame-chip"></div><div class="frame-chip"></div>
+  </div>
+</header>
+
+<main>
+
+  <!-- LOG LINE / SUMMARY -->
+  <section id="log" class="section logline">
+    <p class="section-tag">Log Line</p>
+    <p class="big-statement">Real-time, high-throughput vision systems for hospitals,
+      parking infrastructure, industrial floors and city streets — built with FastAPI,
+      OpenCV and OCR pipelines, deployed to production, and stress-tested against
+      thousands of ground-truth frames before anyone trusted them.</p>
+    <div class="stat-row">
+      <div class="stat"><span class="num" data-value="30000" data-suffix="+">0</span><span class="label">CT scans reviewed for a logic-vs-model failure study</span></div>
+      <div class="stat"><span class="num" data-value="98.5" data-decimals="1" data-suffix="%">0</span><span class="label">recognition accuracy, real-time ANPR system</span></div>
+      <div class="stat"><span class="num" data-value="95" data-suffix="%">0</span><span class="label">reduction in manual safety audits, 7-model CV suite</span></div>
+      <div class="stat"><span class="num" data-value="70000" data-suffix="">0</span><span class="label">images auto-segmented per batch by a labeling engine I built</span></div>
+    </div>
+  </section>
+
+  <!-- EDL -->
+  <section id="edl" class="section">
+    <p class="section-tag">Edit Decision List</p>
+    <h2>Work Experience</h2>
+    <p class="section-note">Logged like a cutting-room EDL — where each role started, ended,
+      and what kind of transition it was.</p>
+
+    <div class="edl-table" role="table" aria-label="Work experience">
+      <div class="edl-head" role="row">
+        <span>SHOT</span><span>IN</span><span>OUT</span><span>DUR</span><span>TRANSITION</span><span>DESCRIPTION</span>
+      </div>
+
+      <div class="edl-row" role="row">
+        <span class="c-shot">001</span>
+        <span class="c-tc">2026·06</span>
+        <span class="c-tc">2026·09</span>
+        <span class="c-dur">3mo</span>
+        <span class="c-trans cut">CUT</span>
+        <div class="c-desc">
+          <strong>AI/ML Developer</strong> — Samarpan Hospital Pvt. Ltd.
+          <p>Built 2D/3D DICOM pipelines (CT, MRI) from scratch for automated anomaly
+            detection; backend logic, dashboards and cross-department notifications
+            replacing manual hospital workflows.</p>
+        </div>
+      </div>
+
+      <div class="edl-row" role="row">
+        <span class="c-shot">002</span>
+        <span class="c-tc">2026·01</span>
+        <span class="c-tc">2026·06</span>
+        <span class="c-dur">5mo</span>
+        <span class="c-trans dissolve">DISSOLVE</span>
+        <div class="c-desc">
+          <strong>Lead AI/ML Developer</strong> — Parking POP (contract)
+          <p>Real-time vehicle detection &amp; ANPR integrated with government databases —
+            98.5% recognition accuracy. Deployed an LLM support agent with dynamic
+            tool-calling and strict edge-case validation for deterministic output.</p>
+        </div>
+      </div>
+
+      <div class="edl-row" role="row">
+        <span class="c-shot">003</span>
+        <span class="c-tc">2025·10</span>
+        <span class="c-tc">2026·01</span>
+        <span class="c-dur">3mo</span>
+        <span class="c-trans dissolve">DISSOLVE</span>
+        <div class="c-desc">
+          <strong>AI/ML Developer (Apprenticeship)</strong> — Avijo Healthcare Solutions
+          <p>Agentic AI ecosystem with LLM-driven chatbots and dashboards, automating
+            clinical data orchestration for 100+ daily physician queries; cut retrieval
+            time 30%.</p>
+        </div>
+      </div>
+
+      <div class="edl-row" role="row">
+        <span class="c-shot">004</span>
+        <span class="c-tc">2025·02</span>
+        <span class="c-tc">2025·10</span>
+        <span class="c-dur">8mo</span>
+        <span class="c-trans cut">CUT</span>
+        <div class="c-desc">
+          <strong>AI/ML Engineer Intern</strong> — Nippon Data Systems Ltd.
+          <p>Enterprise 7-model CV suite for industrial safety monitoring (−95% manual
+            audits) and OCR document extraction. Built a resume-parser QA suite that
+            scored unstructured extraction against ground-truth samples.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE BUCKETS -->
+  <section id="buckets" class="section">
+    <p class="section-tag">Scene Buckets</p>
+    <h2>Projects, grouped by what they actually do</h2>
+    <p class="section-note">Perception, real-time tracking, and autonomous decision-making show
+      up across every domain below — healthcare, security, transportation, industrial safety.
+      Roughly ordered by how directly each one maps onto robotics: sensing the world, tracking
+      it over time, and deciding what to do next.</p>
+
+    <div class="bucket-grid">
+
+      <article class="bucket">
+        <p class="bucket-cat">Perception / Real-Time Tracking</p>
+        <h3>Perimeter Intrusion Detection &amp; Tracking</h3>
+        <p>Click-to-draw polygon zoning on a live stream; YOLO + ByteTrack for
+          persistent per-person IDs; ray-casting on centroid <em>and</em> foot
+          position to catch the exact frame a boundary is crossed.</p>
+        <p class="bucket-tags">YOLO · ByteTrack · Ray-Casting · Live Alerts</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Transportation / Traffic</p>
+        <h3>Stopped Vehicle Detection</h3>
+        <p>Pretrained YOLO vehicle detection fused with frame-differencing motion
+          scoring — five-plus consecutive static frames before a vehicle is flagged
+          as stopped, with persistent IoU-based ID tracking across the feed.</p>
+        <p class="bucket-tags">YOLOv11n · OpenCV · IoU Tracking</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Perception / Real-Time OCR</p>
+        <h3>Real-Time Number Plate Recognition</h3>
+        <p>Custom YOLO detector + OpenCV preprocessing (adaptive threshold, denoise,
+          contour filtering) feeding EasyOCR, with dedup and timestamped logging
+          across sessions.</p>
+        <p class="bucket-tags">YOLO · OpenCV · EasyOCR · Stream Processing</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Perception / State Estimation</p>
+        <h3>Pose Estimation Fall-Detection</h3>
+        <p>33-landmark pose tracking with custom joint-angle math to distinguish a
+          real fall from a bend or a crouch, confirmed over multiple frames to kill
+          false positives, with instant on-screen alerting.</p>
+        <p class="bucket-tags">MediaPipe · Angle Geometry · False-Positive Control</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Autonomous Navigation</p>
+        <h3>NEAT-Trained Self-Driving Car</h3>
+        <p>A car agent that learns to drive from five radar-style distance sensors
+          alone — no hand-coded rules — evolving its control network with NEAT
+          across five progressively harder tracks, carrying what it learned forward
+          from map to map.</p>
+        <p class="bucket-tags">NEAT · Evolutionary Neural Nets · Sensor-Driven Control</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Autonomous Decision-Making</p>
+        <h3>Snake — Deep Q-Network Agent</h3>
+        <p>DQN trained from scratch (no pretraining) on an 11-dimensional state,
+          experience replay, epsilon-greedy exploration — visible, measurable
+          learning from random flailing to expert play.</p>
+        <p class="bucket-tags">PyTorch · DQN · Experience Replay</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Safety-Critical Monitoring</p>
+        <h3>Fire &amp; Smoke Detection</h3>
+        <p>Custom-trained YOLOv8 on a self-annotated dataset for early flame and
+          smoke warning, tuned against hard cases — small flames, thick smoke —
+          rather than trusting off-the-shelf weights.</p>
+        <p class="bucket-tags">YOLOv8 · Custom Dataset · Early Warning</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">3D Spatial Reconstruction</p>
+        <h3>DICOM → Interactive 3D Web Viewer</h3>
+        <p>Pipeline converting raw CT/NIfTI slices into browser-native 3D meshes in
+          real time — HU-based tissue segmentation, Marching Cubes mesh generation,
+          Three.js viewer with live clipping planes and volume readouts.</p>
+        <p class="bucket-tags">DICOM · Three.js · cuCIM · Segmentation</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Model QA / Validation</p>
+        <h3>Brain CT — Logic vs. Model Study</h3>
+        <p>Co-authored research comparing a deterministic HU/symmetry/geometry system
+          against a CNN trained on 30,000+ DICOM scans, evaluated on identical inputs
+          across hemorrhage, asymmetry, mass-effect and fracture detection. The
+          rule-based system missed a hemorrhage the model caught — evidence for a
+          parallel-branch fusion architecture that flags disagreements for
+          radiologist review instead of guessing.</p>
+        <p class="bucket-tags">Logic vs. Deep Learning · 30k+ DICOM Scans · Hybrid Architecture</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Data Engineering / Parsing</p>
+        <h3>Resume Parser</h3>
+        <p>Extracted structured fields — name, father's name, gender, DOB, language,
+          education, experience, key skills — from raw resumes; built a multi-upload
+          API and benchmarked output against a colleague's parser and sample data.</p>
+        <p class="bucket-tags">Python · Pandas · openpyxl · Regex</p>
+      </article>
+
+      <article class="bucket">
+        <p class="bucket-cat">Data Engineering / Parsing</p>
+        <h3>Bank Transaction Parser</h3>
+        <p>Rules-based parser for bank transaction narrations pulled from Excel —
+          isolating transaction mode, party name, reference number and remarks — with
+          clean output written back to a new workbook.</p>
+        <p class="bucket-tags">Python · Pandas · openpyxl · Regex</p>
+      </article>
+
+      <a class="bucket bucket-more" href="projects.html">
+        <p class="bucket-cat">Full Archive</p>
+        <h3>See more projects <span class="arrow">→</span></h3>
+        <p>Parsers, forecasting tools, dashboards, and the smaller day-to-day
+          builds that don't make the highlight reel but show the same
+          frame-by-frame habits.</p>
+        <p class="bucket-tags">23 shots logged — the full reel, uncut</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FRAME BY FRAME -->
+  <!-- CORE TECHNICAL SKILLS -->
+  <section id="skills" class="section skills">
+    <p class="section-tag">Core Technical Skills</p>
+    <h2>What's actually in the toolbox</h2>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Languages &amp; Frameworks</h4>
+        <div class="chips">
+          <span>Python</span><span>Java</span><span>JavaScript</span><span>C++</span><span>C# / .NET</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Machine Learning &amp; Deep Learning</h4>
+        <div class="chips">
+          <span>TensorFlow</span><span>PyTorch</span><span>Scikit-learn</span><span>Deep Q-Learning (DQN)</span>
+          <span>Small Language Models (SLMs)</span><span>Model Training</span><span>Hyperparameter Tuning</span>
+          <span>Model Optimization</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Computer Vision &amp; OCR</h4>
+        <div class="chips">
+          <span>OpenCV</span><span>MediaPipe</span><span>YOLO</span><span>ByteTrack</span><span>EasyOCR</span>
+          <span>Object Detection</span><span>Real-Time Inference Optimization</span><span>Motion / Frame-Differencing</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Agentic AI &amp; LLMs</h4>
+        <div class="chips">
+          <span>Multi-Agent Architectures</span><span>Multi-Turn Reasoning</span><span>Dynamic Tool-Calling</span>
+          <span>RAG</span><span>Chatbot &amp; Dashboard Orchestration</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Backend &amp; Infrastructure</h4>
+        <div class="chips">
+          <span>FastAPI</span><span>Flask</span><span>REST APIs</span><span>Node.js / Express</span>
+          <span>Asynchronous Processing</span><span>WebSockets</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Data Engineering &amp; Analytics</h4>
+        <div class="chips">
+          <span>Pandas</span><span>NumPy</span><span>SQL</span><span>SQLAlchemy</span><span>Oracle DB</span>
+          <span>Dash</span><span>Plotly</span><span>OpenPyXL</span><span>Regular Expressions</span><span>Feature Engineering</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Tools &amp; MLOps</h4>
+        <div class="chips">
+          <span>Docker</span><span>Git</span><span>Kafka</span><span>Postman</span><span>Cursor AI</span>
+          <span>DICOM Medical Image Processing</span><span>Linux</span><span>Local &amp; Cloud Deployment</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="detail" class="section detail">
+    <p class="section-tag">Frame-by-Frame</p>
+    <h2>Why the subtle cue matters</h2>
+    <p class="section-note">The hard part of any perception system is never the obvious case —
+      it's the pan that isn't a shot change, the fall that's actually a crouch, the drift that
+      isn't yet a failure. Getting that distinction right, consistently, at speed, is the thread
+      running through everything below — and it's the same instinct real-time robotics work
+      leans on.</p>
+
+    <div class="evidence-list">
+      <div class="evidence">
+        <span class="ev-mark">01</span>
+        <p><strong>Built the ground-truth scoring, not just the model.</strong> The resume-parser
+          project at Nippon Data Systems included an automated validation suite that
+          continuously benchmarked extraction output against ground-truth samples — the
+          discipline that keeps any perception pipeline honest once it leaves the notebook.</p>
+      </div>
+      <div class="evidence">
+        <span class="ev-mark">02</span>
+        <p><strong>Mapped exact failure thresholds, not vague ones.</strong> The Brain CT study
+          didn't stop at "the model is usually right" — it logged precisely which finding type
+          broke which system, on the same scan, and proposed a conflict-flagging layer instead
+          of a blind prediction.</p>
+      </div>
+      <div class="evidence">
+        <span class="ev-mark">03</span>
+        <p><strong>Track state, not just position.</strong> Perimeter and stopped-vehicle systems
+          both needed persistent IDs held across frames and motion measured over 5+ consecutive
+          frames before calling a state change — the same restraint any real-time system needs
+          before committing to a decision, whether it's watching a doorway or an actuator.</p>
+      </div>
+      <div class="evidence">
+        <span class="ev-mark">04</span>
+        <p><strong>Built the data-labeling engine, not just consumed one.</strong> Polygon
+          drawing on canvas, boundary math, batch throughput at 70k images/hour — the same
+          infrastructure that feeds training data to any perception model, whatever it's
+          eventually mounted on.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- CONTACT -->
+<footer id="contact" class="footer">
+  <div class="footer-top">
+    <p class="section-tag light">Roll Credits</p>
+    <h2>Let's talk shot boundaries.</h2>
+    <p class="footer-note">Available full-time, ready to interview, short notice period.
+      Based in Uttar Pradesh, India — comfortable working async against PST hours.</p>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:suruswork395@gmail.com">suruswork395@gmail.com</a>
+    <a href="tel:+918933996581">+91 89339 96581</a>
+    <a href="https://linkedin.com/in/suryansh-singh-5857a0263" target="_blank" rel="noopener">linkedin.com/in/suryansh-singh</a>
+  </div>
+  <p class="footer-end">Bachelor of Computer Applications — AI &amp; ML, Galgotias University · 2022–2025</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
