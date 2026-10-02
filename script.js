@@ -105,3 +105,59 @@
 
   nums.forEach(n => observer.observe(n));
 })();
+
+// ------------------------------------------------------
+// Icons: strokes draw in on first view, then each icon plays its own
+// signature motion; replays on hover / keyboard focus.
+// ------------------------------------------------------
+(function iconMotion(){
+  const icons = Array.from(document.querySelectorAll('.ic'));
+  if(!icons.length) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const SHAPES = 'path,circle,rect,line,polyline,polygon,ellipse';
+
+  icons.forEach(ic => {
+    ic.querySelectorAll(SHAPES).forEach((el, i) => {
+      el.setAttribute('pathLength', '1');
+      if(!el.classList.contains('fill')){
+        el.classList.add('s');
+        el.style.setProperty('--i', Math.min(i, 6));
+      }
+    });
+  });
+
+  const timers = new WeakMap();
+  function play(ic){
+    if(reduce || !ic.classList.contains('drawn')) return;
+    clearTimeout(timers.get(ic));
+    ic.classList.remove('play');
+    void ic.getBoundingClientRect();
+    ic.classList.add('play');
+    timers.set(ic, setTimeout(() => ic.classList.remove('play'), 2000));
+  }
+
+  if(reduce || !('IntersectionObserver' in window)){
+    icons.forEach(ic => ic.classList.add('drawn'));
+    return;
+  }
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      const ic = e.target;
+      io.unobserve(ic);
+      ic.classList.add('in');
+      setTimeout(() => { ic.classList.add('drawn'); play(ic); }, 1500);
+    });
+  }, { threshold: 0.4 });
+  icons.forEach(ic => io.observe(ic));
+
+  const HOSTS = '.bucket,.skill-group,.stat,.evidence,.edl-row,.btn,.footer-links a,.back-link,.section-tag,.frame-chip';
+  document.querySelectorAll(HOSTS).forEach(host => {
+    const own = host.querySelectorAll('.ic');
+    if(!own.length) return;
+    const go = () => own.forEach(play);
+    host.addEventListener('pointerenter', go);
+    host.addEventListener('focusin', go);
+  });
+})();
