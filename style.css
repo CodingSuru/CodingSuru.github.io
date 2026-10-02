@@ -368,3 +368,166 @@ a{ color:inherit; }
   .rec i{ animation:none; }
   .playhead{ transition:none; }
 }
+
+/* ===================================================
+   ICON SYSTEM
+   Colour = domain family · Icon = exact category
+=================================================== */
+:root{
+  --c-perception:#E8A33D;
+  --c-autonomy:#4FC1AE;
+  --c-safety:#E0705F;
+  --c-medical:#6AAEE6;
+  --c-data:#A890E0;
+  --c-automation:#8CC866;
+  --c-neutral:#9AA0AC;
+}
+[data-fam="perception"]{ --ic:var(--c-perception); }
+[data-fam="autonomy"]{ --ic:var(--c-autonomy); }
+[data-fam="safety"]{ --ic:var(--c-safety); }
+[data-fam="medical"]{ --ic:var(--c-medical); }
+[data-fam="data"]{ --ic:var(--c-data); }
+[data-fam="automation"]{ --ic:var(--c-automation); }
+[data-fam="neutral"]{ --ic:var(--c-neutral); }
+
+.ic{
+  display:inline-flex; align-items:center; justify-content:center;
+  flex-shrink:0; line-height:0; color:var(--ic, currentColor);
+}
+.ic svg{
+  width:100%; height:100%; display:block; overflow:visible;
+  fill:none; stroke:currentColor; stroke-width:1.6;
+  stroke-linecap:round; stroke-linejoin:round;
+}
+.ic-xs{ width:13px; height:13px; }
+.ic-sm{ width:16px; height:16px; }
+.ic-md{ width:20px; height:20px; }
+.ic-job{ width:20px; height:20px; }
+.ic-lg{ width:32px; height:32px; }
+.ic-badge{
+  width:48px; height:48px; border-radius:3px;
+  border:1px solid color-mix(in srgb, var(--ic) 38%, var(--line));
+  background:color-mix(in srgb, var(--ic) 9%, transparent);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .25s ease,
+             background .25s ease, box-shadow .35s ease;
+}
+.ic-badge svg{ width:26px; height:26px; }
+
+/* animation anchors */
+.ic svg [class*="k-"]{ transform-box:fill-box; transform-origin:center; }
+.ic svg .fill{ fill:currentColor; stroke:none; transform-box:fill-box; transform-origin:center; }
+.ic svg .vb{ transform-box:view-box; transform-origin:12px 12px; }
+.ic svg .ob{ transform-origin:50% 100%; }
+.ic svg .ol{ transform-origin:0% 100%; }
+.ic svg .k-type{ transform-origin:0% 50%; }
+.ic svg .k-redraw{ stroke-dasharray:1; }
+
+/* ---- reveal: strokes draw themselves, dots fade in (JS-enabled only) ---- */
+.js .ic:not(.drawn) svg .s{ stroke-dasharray:1; stroke-dashoffset:1; }
+.js .ic.in:not(.drawn) svg .s{
+  animation:ic-draw 1s cubic-bezier(.65,0,.35,1) forwards;
+  animation-delay:calc(var(--i,0) * 60ms);
+}
+.js .ic:not(.drawn) svg .fill{ opacity:0; }
+.js .ic.in:not(.drawn) svg .fill{ animation:ic-fillin .5s .6s cubic-bezier(.2,.8,.2,1) forwards; }
+@keyframes ic-draw{ to{ stroke-dashoffset:0; } }
+@keyframes ic-fillin{ from{ opacity:0; transform:scale(.3); } to{ opacity:1; transform:scale(1); } }
+
+/* ---- signature motions (played on reveal, then on hover / focus) ---- */
+.ic.play svg [class*="k-"]{
+  animation-duration:var(--dur,1.1s);
+  animation-timing-function:cubic-bezier(.45,0,.25,1);
+  animation-delay:calc(var(--d,0) * 1ms);
+}
+.ic.play .k-bob{ animation-name:k-bob; }
+.ic.play .k-sx{ animation-name:k-sx; }
+.ic.play .k-sxn{ animation-name:k-sxn; }
+.ic.play .k-scanx{ animation-name:k-scanx; animation-duration:1.4s; }
+.ic.play .k-diag{ animation-name:k-diag; }
+.ic.play .k-diagd{ animation-name:k-diagd; }
+.ic.play .k-pulse{ animation-name:k-pulse; }
+.ic.play .k-blink{ animation-name:k-blink; }
+.ic.play .k-wig{ animation-name:k-wig; animation-duration:1s; }
+.ic.play .k-grow{ animation-name:k-grow; }
+.ic.play .k-rot120{ animation-name:k-rot120; animation-duration:1.4s; }
+.ic.play .k-rot90{ animation-name:k-rot90; animation-duration:1.2s; }
+.ic.play .k-rot72{ animation-name:k-rot72; animation-duration:1.4s; }
+.ic.play .k-rot45{ animation-name:k-rot45; animation-duration:1.2s; }
+.ic.play .k-fall{ animation-name:k-fall; animation-duration:1.6s; }
+.ic.play .k-flick{ animation-name:k-flick; animation-duration:1.2s; }
+.ic.play .k-look{ animation-name:k-look; animation-duration:1.4s; }
+.ic.play .k-drop{ animation-name:k-drop; animation-duration:1.5s; }
+.ic.play .k-type{ animation-name:k-type; animation-duration:1.2s; }
+.ic.play .k-redraw{ animation-name:k-redraw; animation-duration:1.3s; }
+.ic.play .k-clap{ animation-name:k-clap; animation-duration:.9s; }
+.ic.play .k-needle{ animation-name:k-needle; animation-duration:1.5s; }
+
+@keyframes k-bob{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2.2px)} }
+@keyframes k-sx{ 0%,100%{transform:translateX(0)} 50%{transform:translateX(3px)} }
+@keyframes k-sxn{ 0%,100%{transform:translateX(0)} 50%{transform:translateX(-3px)} }
+@keyframes k-scanx{ 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+@keyframes k-diag{ 0%,100%{transform:translate(0,0)} 50%{transform:translate(2.2px,-2.2px)} }
+@keyframes k-diagd{ 0%,100%{transform:translate(0,0)} 50%{transform:translate(2.2px,2.2px)} }
+@keyframes k-pulse{ 0%,100%{transform:scale(1)} 50%{transform:scale(1.35)} }
+@keyframes k-blink{ 0%,100%{opacity:1} 50%{opacity:.12} }
+@keyframes k-wig{ 0%,100%{transform:rotate(0)} 20%{transform:rotate(-14deg)} 40%{transform:rotate(12deg)} 60%{transform:rotate(-7deg)} 80%{transform:rotate(4deg)} }
+@keyframes k-grow{ 0%,100%{transform:scaleY(1)} 35%{transform:scaleY(.3)} }
+@keyframes k-rot120{ to{transform:rotate(120deg)} }
+@keyframes k-rot90{ to{transform:rotate(90deg)} }
+@keyframes k-rot72{ to{transform:rotate(72deg)} }
+@keyframes k-rot45{ to{transform:rotate(45deg)} }
+@keyframes k-fall{ 0%,100%{transform:rotate(0)} 40%,60%{transform:rotate(78deg)} }
+@keyframes k-flick{ 0%,100%{transform:scale(1) rotate(0)} 25%{transform:scale(1.08,.93) rotate(-3deg)} 50%{transform:scale(.94,1.1) rotate(3deg)} 75%{transform:scale(1.05,.97) rotate(-2deg)} }
+@keyframes k-look{ 0%,100%{transform:translateX(0)} 30%{transform:translateX(-3px)} 70%{transform:translateX(3px)} }
+@keyframes k-drop{
+  0%{opacity:1;transform:translateY(0)}
+  55%{opacity:1;transform:translateY(9px)}
+  70%{opacity:0;transform:translateY(11px)}
+  71%{opacity:0;transform:translateY(-4px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+@keyframes k-type{ 0%,100%{transform:scaleX(1)} 20%{transform:scaleX(0)} }
+@keyframes k-redraw{ 0%,100%{stroke-dashoffset:0} 35%{stroke-dashoffset:1} }
+@keyframes k-clap{ 0%,100%{transform:rotate(0)} 40%{transform:rotate(-18deg)} 60%{transform:rotate(0)} }
+@keyframes k-needle{ 0%,100%{transform:rotate(0)} 35%{transform:rotate(-55deg)} 70%{transform:rotate(30deg)} }
+
+/* ---------------- project cards ---------------- */
+.bucket-head{ display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+.bucket .bucket-head .bucket-cat{ margin:0; line-height:1.4; color:var(--ic, var(--teal)); }
+.bucket:hover{ border-left-color:var(--ic, var(--amber)); }
+.bucket:hover .ic-badge{
+  transform:translateY(-3px);
+  border-color:var(--ic);
+  background:color-mix(in srgb, var(--ic) 20%, transparent);
+  box-shadow:0 10px 22px -12px var(--ic);
+}
+.bucket-more .bucket-head .bucket-cat{ color:var(--amber); }
+
+/* legend */
+.legend{ margin-bottom:26px; display:flex; flex-direction:column; gap:12px; }
+.legend-note{ font-size:.9rem; color:var(--ink-dim); }
+.legend-items{ display:flex; flex-wrap:wrap; gap:10px 24px; font-family:var(--font-mono); font-size:.74rem; color:var(--ink-dim); }
+.legend-item{ display:inline-flex; align-items:center; gap:8px; }
+.legend-item i{ width:10px; height:10px; border-radius:2px; background:var(--ic); }
+
+/* ---------------- other places ---------------- */
+.section-tag{ display:flex; align-items:center; gap:9px; }
+.btn{ display:inline-flex; align-items:center; gap:9px; }
+.back-link{ display:inline-flex; align-items:center; gap:8px; }
+.footer-links a{ display:inline-flex; align-items:center; gap:9px; }
+.skill-group h4{ display:flex; align-items:center; gap:10px; }
+.c-trans{ display:inline-flex; align-items:center; justify-content:center; gap:6px; }
+.c-desc strong{ display:flex; align-items:center; gap:10px; }
+.frame-chip{ display:grid; place-items:center; }
+.frame-chip.cut{ color:var(--rec); }
+.frame-chip.dissolve{ color:var(--amber); }
+.stat .ic{ margin-bottom:14px; }
+.ev-mark{ display:flex; align-items:flex-start; padding-top:2px; }
+.ev-mark .ic{ opacity:.95; }
+
+@media (prefers-reduced-motion:reduce){
+  .ic svg *{ animation:none !important; }
+  .js .ic svg .s{ stroke-dashoffset:0 !important; }
+  .js .ic svg .fill{ opacity:1 !important; }
+  .ic-badge, .bucket:hover .ic-badge{ transition:none; transform:none; }
+}
