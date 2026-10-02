@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Project Log — Suryansh Singh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="archive-header">
+  <div class="hero-hud">
+    <span class="rec"><i></i> REC</span>
+    <span class="tc" id="tc">00:00:00:00</span>
+    <span class="res">4K · 23.976 fps</span>
+  </div>
+  <a href="index.html" class="back-link"><span class="ic ic-sm" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="k-sxn" d="M19 12H5M11 6l-6 6 6 6"/></svg></span>Back to Shot Log</a>
+  <p class="section-tag"><span class="ic ic-sm" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect class="k-bob" x="3" y="4" width="18" height="4.5" rx="1"/><path d="M4.5 8.5V19a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V8.5M10 12.5h4"/></svg></span>Full Archive</p>
+  <h1>Every shot, logged</h1>
+  <p class="archive-lede">Every build in one place — the highlight-reel shots alongside the
+    parsers, forecasters, dashboards, and internal tools that never made it to LinkedIn.
+    Same habit, every frame.</p>
+</header>
+
+<main>
+  <section class="section archive-section">
+
+    <div class="legend" role="note" aria-label="Icon legend"><p class="legend-note">Colour marks the domain. The icon marks the exact category.</p><div class="legend-items"><span class="legend-item" data-fam="perception"><i></i>Perception &amp; tracking</span><span class="legend-item" data-fam="autonomy"><i></i>Autonomous agents</span><span class="legend-item" data-fam="safety"><i></i>Safety &amp; security</span><span class="legend-item" data-fam="medical"><i></i>Medical imaging &amp; QA</span><span class="legend-item" data-fam="data"><i></i>Data &amp; analytics</span><span class="legend-item" data-fam="automation"><i></i>Automation &amp; LLM agents</span></div></div>
+
+    <div class="bucket-grid">
+
+      <article class="bucket" data-fam="perception">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><circle class="k-pulse" cx="12" cy="12" r="3"/><path d="M12 6.5V8M12 16v1.5M6.5 12H8M16 12h1.5"/></svg></span><p class="bucket-cat">Perception / Real-Time Tracking</p></div>
+        <h3>Perimeter Intrusion Detection &amp; Tracking</h3>
+        <p>Click-to-draw polygon zoning on a live stream; YOLO + ByteTrack for
+          persistent per-person IDs; ray-casting on centroid <em>and</em> foot
+          position to catch the exact frame a boundary is crossed.</p>
+        <p class="bucket-tags">YOLO · ByteTrack · Ray-Casting · Live Alerts</p>
+      </article>
+
+      <article class="bucket" data-fam="perception">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><g class="k-sx"><path d="M3.5 15.5v-3.2l2.2-4.3h8.6l3.2 4.3H21v3.2"/><path d="M8 8v4.3M3.5 12.3h13.5M9.3 16.5h5.4"/><circle cx="7.5" cy="16.5" r="1.8"/><circle cx="16.5" cy="16.5" r="1.8"/></g><path d="M2 20.5h20"/></svg></span><p class="bucket-cat">Transportation / Traffic</p></div>
+        <h3>Stopped Vehicle Detection</h3>
+        <p>Pretrained YOLO vehicle detection fused with frame-differencing motion
+          scoring — five-plus consecutive static frames before a vehicle is flagged
+          as stopped, with persistent IoU-based ID tracking across the feed.</p>
+        <p class="bucket-tags">YOLOv11n · OpenCV · IoU Tracking</p>
+      </article>
+
+      <article class="bucket" data-fam="perception">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="2.5" y="6.5" width="19" height="11" rx="1.8"/><path d="M6.5 12h2M11 12h2M15.5 12h2"/><path class="k-scanx" d="M12 4.5v15"/></svg></span><p class="bucket-cat">Perception / Real-Time OCR</p></div>
+        <h3>Real-Time Number Plate Recognition</h3>
+        <p>Custom YOLO detector + OpenCV preprocessing (adaptive threshold, denoise,
+          contour filtering) feeding EasyOCR, with dedup and timestamped logging
+          across sessions.</p>
+        <p class="bucket-tags">YOLO · OpenCV · EasyOCR · Stream Processing</p>
+      </article>
+
+      <article class="bucket" data-fam="perception">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><g class="k-fall ob"><circle cx="12" cy="4.8" r="1.9"/><path d="M12 8.2v6M8 11l4-2.3 4 2.3M12 14.2l-3 6M12 14.2l3 6"/></g><path d="M5 21h14"/></svg></span><p class="bucket-cat">Perception / State Estimation</p></div>
+        <h3>Pose Estimation Fall-Detection</h3>
+        <p>33-landmark pose tracking with custom joint-angle math to distinguish a
+          real fall from a bend or a crouch, confirmed over multiple frames to kill
+          false positives, with instant on-screen alerting.</p>
+        <p class="bucket-tags">MediaPipe · Angle Geometry · False-Positive Control</p>
+      </article>
+
+      <article class="bucket" data-fam="autonomy">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="k-blink" style="--d:0" d="M12 14.5L3.5 8"/><path class="k-blink" style="--d:90" d="M12 14.5L7 5.5"/><path class="k-blink" style="--d:180" d="M12 14.5V4.5"/><path class="k-blink" style="--d:270" d="M12 14.5l5-9"/><path class="k-blink" style="--d:360" d="M12 14.5L20.5 8"/><rect x="9" y="15.5" width="6" height="6" rx="1.4"/></svg></span><p class="bucket-cat">Autonomous Navigation</p></div>
+        <h3>NEAT-Trained Self-Driving Car</h3>
+        <p>A car agent that learns to drive from five radar-style distance sensors
+          alone — no hand-coded rules — evolving its control network with NEAT
+          across five progressively harder tracks, carrying what it learned forward
+          from map to map.</p>
+        <p class="bucket-tags">NEAT · Evolutionary Neural Nets · Sensor-Driven Control</p>
+      </article>
+
+      <article class="bucket" data-fam="autonomy">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4.5 19h9a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h4"/><circle class="fill k-bob" cx="14" cy="7" r="1.5"/><rect class="k-pulse" x="17.5" y="5.5" width="3" height="3" rx=".6"/></svg></span><p class="bucket-cat">Autonomous Decision-Making</p></div>
+        <h3>Snake — Deep Q-Network Agent</h3>
+        <p>DQN trained from scratch (no pretraining) on an 11-dimensional state,
+          experience replay, epsilon-greedy exploration — visible, measurable
+          learning from random flailing to expert play.</p>
+        <p class="bucket-tags">PyTorch · DQN · Experience Replay</p>
+      </article>
+
+      <article class="bucket" data-fam="safety">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><g class="k-flick ob"><path d="M12 3c.6 3.2 5.5 5.2 5.5 10.2a5.5 5.5 0 0 1-11 0c0-2.2 1-3.7 2.2-4.8.2 1.8 1 2.8 2.2 3.1C10.2 8.8 10.4 5.8 12 3z"/></g><path class="k-bob" d="M10.2 16.2a2 2 0 0 0 3.6 0c0-1.2-1-1.8-1.8-3-.8 1.2-1.8 1.8-1.8 3z"/></svg></span><p class="bucket-cat">Safety-Critical Monitoring</p></div>
+        <h3>Fire &amp; Smoke Detection</h3>
+        <p>Custom-trained YOLOv8 on a self-annotated dataset for early flame and
+          smoke warning, tuned against hard cases — small flames, thick smoke —
+          rather than trusting off-the-shelf weights.</p>
+        <p class="bucket-tags">YOLOv8 · Custom Dataset · Early Warning</p>
+      </article>
+
+      <article class="bucket" data-fam="medical">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><g class="k-rot120 vb"><path d="M12 3l7.8 4.5v9L12 21l-7.8-4.5v-9z"/><path d="M12 12l7.8-4.5M12 12v9M12 12L4.2 7.5"/></g></svg></span><p class="bucket-cat">3D Spatial Reconstruction</p></div>
+        <h3>DICOM → Interactive 3D Web Viewer</h3>
+        <p>Pipeline converting raw CT/NIfTI slices into browser-native 3D meshes in
+          real time — HU-based tissue segmentation, Marching Cubes mesh generation,
+          Three.js viewer with live clipping planes and volume readouts.</p>
+        <p class="bucket-tags">DICOM · Three.js · cuCIM · Segmentation</p>
+      </article>
+
+      <article class="bucket" data-fam="medical">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 3l7.5 3v5.5c0 4.6-3.1 8-7.5 9.5-4.4-1.5-7.5-4.9-7.5-9.5V6z"/><path class="k-redraw" d="M8.8 12l2.2 2.2 4.2-4.4"/></svg></span><p class="bucket-cat">Model QA / Validation</p></div>
+        <h3>Brain CT — Logic vs. Model Study</h3>
+        <p>Co-authored research comparing a deterministic HU/symmetry/geometry system
+          against a CNN trained on 30,000+ DICOM scans, evaluated on identical inputs
+          across hemorrhage, asymmetry, mass-effect and fracture detection. The
+          rule-based system missed a hemorrhage the model caught — evidence for a
+          parallel-branch fusion architecture that flags disagreements for
+          radiologist review instead of guessing.</p>
+        <p class="bucket-tags">Logic vs. Deep Learning · 30k+ DICOM Scans · Hybrid Architecture</p>
+      </article>
+
+      <article class="bucket" data-fam="safety">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle class="k-look" cx="12" cy="12" r="2.8"/><circle class="fill k-look" cx="12" cy="12" r="1"/></svg></span><p class="bucket-cat">Security / Surveillance</p></div>
+        <h3>Visual Analysis Model (Multi-Detection Suite)</h3>
+        <p>The earlier, smaller version of the industrial CV suite — sub-models for
+          PPE, fire/smoke, stopped vehicles, perimeter intrusion, intruders, falls
+          and armed-person detection, integrated and tested live against CCTV.</p>
+        <p class="bucket-tags">Python · CCTV Integration · Multi-Model</p>
+      </article>
+
+      <article class="bucket" data-fam="safety">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle class="k-look" cx="12" cy="12" r="2.8"/><circle class="fill k-look" cx="12" cy="12" r="1"/></svg></span><p class="bucket-cat">Security / Surveillance</p></div>
+        <h3>IPCrowdSense</h3>
+        <p>Crowd counting off RTSP IP camera feeds using YOLOv11, with a configurable
+          "max persons allowed" boundary — ray-casting to flag violations and log
+          severity to a dashboard.</p>
+        <p class="bucket-tags">YOLOv11 · RTSP · Ray-Casting</p>
+      </article>
+
+      <article class="bucket" data-fam="automation">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3.5 4.5h17L14 12.5V19l-4 2v-8.5z"/><circle class="fill k-drop" cx="12" cy="7.5" r="1.2"/></svg></span><p class="bucket-cat">Automation / Lead-Gen</p></div>
+        <h3>Business Search &amp; Mapping Application</h3>
+        <p>Flask app for searching businesses by industry and radius against the
+          Google Maps API, with interactive map/list views and lead storage to JSON.</p>
+        <p class="bucket-tags">Flask · Google Maps API · JSON</p>
+      </article>
+
+      <article class="bucket" data-fam="automation">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3.5 4.5h17L14 12.5V19l-4 2v-8.5z"/><circle class="fill k-drop" cx="12" cy="7.5" r="1.2"/></svg></span><p class="bucket-cat">Automation / Lead-Gen</p></div>
+        <h3>AI Lead-Generation Engine</h3>
+        <p>Product-aware B2B lead engine: feed it a product's own documents and it
+          builds a structured ICP, then discovers and classifies prospects from the
+          open web — separating real buyer companies from competitors, articles and
+          generic inboxes — before scoring product fit and exporting qualified leads
+          with a "why this lead" rationale attached to each one.</p>
+        <p class="bucket-tags">Python · LLM-Driven ICP · Lead Scoring Pipeline</p>
+      </article>
+
+      <article class="bucket" data-fam="data">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path class="k-type ol" style="--d:0" d="M9 12h6"/><path class="k-type ol" style="--d:130" d="M9 15.5h6"/><path class="k-type ol" style="--d:260" d="M9 19h3.5"/></svg></span><p class="bucket-cat">Data Engineering / Parsing</p></div>
+        <h3>Resume Parser</h3>
+        <p>Extracted structured fields — name, father's name, gender, DOB, language,
+          education, experience, key skills — from raw resumes; built a multi-upload
+          API and benchmarked output against a colleague's parser and sample data.</p>
+        <p class="bucket-tags">Python · Pandas · openpyxl · Regex</p>
+      </article>
+
+      <article class="bucket" data-fam="data">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path class="k-type ol" style="--d:0" d="M9 12h6"/><path class="k-type ol" style="--d:130" d="M9 15.5h6"/><path class="k-type ol" style="--d:260" d="M9 19h3.5"/></svg></span><p class="bucket-cat">Data Engineering / Parsing</p></div>
+        <h3>Bank Transaction Parser</h3>
+        <p>Rules-based parser for bank transaction narrations pulled from Excel —
+          isolating transaction mode, party name, reference number and remarks — with
+          clean output written back to a new workbook.</p>
+        <p class="bucket-tags">Python · Pandas · openpyxl · Regex</p>
+      </article>
+
+      <article class="bucket" data-fam="data">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 4v16h16"/><path d="M7.5 15l3.5-3.5 3 2.5 4.5-5.5"/><path class="k-diag" d="M15 8.5h3.5V12"/></svg></span><p class="bucket-cat">Analytics / Forecasting</p></div>
+        <h3>Forecasting Model</h3>
+        <p>Business-metrics forecasting model refined against live SQL table data and
+          senior feedback, exposed through tested API endpoints rather than a
+          notebook-only exercise.</p>
+        <p class="bucket-tags">Python · SQL · API Integration</p>
+      </article>
+
+      <article class="bucket" data-fam="data">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 4v16h16"/><path d="M7.5 15l3.5-3.5 3 2.5 4.5-5.5"/><path class="k-diag" d="M15 8.5h3.5V12"/></svg></span><p class="bucket-cat">Analytics / Forecasting</p></div>
+        <h3>Sales Forecasting &amp; Data Analysis</h3>
+        <p>Flask tool wrapping a Random Forest Regressor over Excel sales data, with
+          company/date selection, forecast display, and an Oracle DB layer underneath
+          for storage and retrieval.</p>
+        <p class="bucket-tags">Flask · scikit-learn · Oracle DB</p>
+      </article>
+
+      <article class="bucket" data-fam="data">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3.5 20.5h17"/><rect class="k-grow ob" style="--d:0" x="5" y="11" width="3.4" height="9" rx=".6"/><rect class="k-grow ob" style="--d:120" x="10.3" y="5" width="3.4" height="15" rx=".6"/><rect class="k-grow ob" style="--d:240" x="15.6" y="8" width="3.4" height="12" rx=".6"/></svg></span><p class="bucket-cat">Analytics / Dashboards</p></div>
+        <h3>Sales Data Analytics &amp; Visualization Platform</h3>
+        <p>Dash-based dashboard for sales data with filters by state, city, customer
+          and date range, generating bar/pie/line/area charts and KPIs, backed by
+          SQLAlchemy.</p>
+        <p class="bucket-tags">Dash · SQLAlchemy · Matplotlib</p>
+      </article>
+
+      <article class="bucket" data-fam="data">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3.5 20.5h17"/><rect class="k-grow ob" style="--d:0" x="5" y="11" width="3.4" height="9" rx=".6"/><rect class="k-grow ob" style="--d:120" x="10.3" y="5" width="3.4" height="15" rx=".6"/><rect class="k-grow ob" style="--d:240" x="15.6" y="8" width="3.4" height="12" rx=".6"/></svg></span><p class="bucket-cat">Analytics / Dashboards</p></div>
+        <h3>ERP Sales Dashboard (Dash &amp; Oracle)</h3>
+        <p>Multi-page ERP-style dashboard covering sales, inventory, payroll and
+          configuration, with dynamic SQL against Oracle, Plotly charts, and export
+          to Excel/PDF.</p>
+        <p class="bucket-tags">Dash · Oracle DB · Plotly</p>
+      </article>
+
+      <article class="bucket" data-fam="automation">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><g class="k-bob"><rect x="3" y="6" width="18" height="13" rx="1.8"/><path d="M3.5 7.5l8.5 6 8.5-6"/></g><circle class="fill k-pulse" cx="20" cy="5.5" r="2"/></svg></span><p class="bucket-cat">Communication / Automation</p></div>
+        <h3>Mail AI Agent</h3>
+        <p>Self-hosted email agent suite — a rich HTML sender with inline (CID)
+          images and reusable templates, a bulk promotional mailer, an IMAP inbox
+          reader with structured per-folder logging, and a header/deliverability
+          layer specifically tuned to land in Primary rather than Promotions or
+          Spam.</p>
+        <p class="bucket-tags">Python · SMTP/IMAP · Email Deliverability</p>
+      </article>
+
+      <article class="bucket" data-fam="automation">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="6" width="16" height="13" rx="1"/><path d="M8 15l2.5-3.5 2.5 2 3-4"/><circle class="fill k-pulse" style="--d:0" cx="4" cy="6" r="1.4"/><circle class="fill k-pulse" style="--d:120" cx="20" cy="6" r="1.4"/><circle class="fill k-pulse" style="--d:240" cx="20" cy="19" r="1.4"/><circle class="fill k-pulse" style="--d:360" cx="4" cy="19" r="1.4"/></svg></span><p class="bucket-cat">Training Data / Automation</p></div>
+        <h3>Auto-Labeling Engine ("2-Click" CV Pipeline)</h3>
+        <p>Zero-human polygon &amp; bounding-box generation at scale — up to 70,000
+          images per batch, under an hour — built for wildlife drone footage and
+          satellite imagery where manual labeling was the real bottleneck.</p>
+        <p class="bucket-tags">Auto-Segmentation · Batch Processing · Drone/Satellite</p>
+      </article>
+
+      <article class="bucket" data-fam="automation">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><g class="k-rot120 vb"><path d="M12 9.9V5.9M10.2 13l-3.4 2M13.8 13l3.4 2"/><circle cx="12" cy="4" r="1.9"/><circle cx="5.1" cy="16" r="1.9"/><circle cx="18.9" cy="16" r="1.9"/></g><circle cx="12" cy="12" r="2"/></svg></span><p class="bucket-cat">Agentic AI / Code Generation</p></div>
+        <h3>Multi-Agent Full-Stack Code Generator</h3>
+        <p>Coordinator-agent architecture that parses a plain-language brief and
+          delegates to specialised frontend, backend and data-viz agents to produce
+          a working app — Notes app, dashboard, or world clock — end to end.</p>
+        <p class="bucket-tags">Python · Multi-Agent · Node.js/Express</p>
+      </article>
+
+      <article class="bucket" data-fam="data">
+        <div class="bucket-head"><span class="ic ic-badge" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><g class="k-rot72 vb"><ellipse cx="12" cy="6.2" rx="2.1" ry="3.4"/><ellipse cx="12" cy="6.2" rx="2.1" ry="3.4" transform="rotate(72 12 12)"/><ellipse cx="12" cy="6.2" rx="2.1" ry="3.4" transform="rotate(144 12 12)"/><ellipse cx="12" cy="6.2" rx="2.1" ry="3.4" transform="rotate(216 12 12)"/><ellipse cx="12" cy="6.2" rx="2.1" ry="3.4" transform="rotate(288 12 12)"/></g><circle class="fill" cx="12" cy="12" r="1.6"/></svg></span><p class="bucket-cat">Data Science / ML Fundamentals</p></div>
+        <h3>Iris Flower Classification</h3>
+        <p>Classic KNN classification exercise on the Iris dataset — exploratory
+          visualization, preprocessing, and species prediction, done properly rather
+          than skipped as "too basic to matter."</p>
+        <p class="bucket-tags">Python · scikit-learn · Seaborn</p>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="footer">
+  <div class="footer-top">
+    <p class="section-tag light"><span class="ic ic-sm" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path class="k-sx" d="M10.5 8.5l5 3.5-5 3.5z"/></svg></span>Roll Credits</p>
+    <h2>Let's talk shot boundaries.</h2>
+    <p class="footer-note">Available full-time, ready to interview, short notice period.
+      Based in Uttar Pradesh, India — comfortable working async against PST hours.</p>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:suruswork395@gmail.com"><span class="ic ic-sm" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><g class="k-bob"><rect x="3" y="6" width="18" height="13" rx="1.8"/><path d="M3.5 7.5l8.5 6 8.5-6"/></g><circle class="fill k-pulse" cx="20" cy="5.5" r="2"/></svg></span>suruswork395@gmail.com</a>
+    <a href="tel:+918933996581"><span class="ic ic-sm" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="k-wig" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>+91 89339 96581</a>
+    <a href="https://linkedin.com/in/suryansh-singh-5857a0263" target="_blank" rel="noopener"><span class="ic ic-sm" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><g class="k-bob"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.8v.01M12 16v-5.5M12 13c0-1.8 1.3-2.7 2.6-2.7S17 11.2 17 13v3"/></g></svg></span>linkedin.com/in/suryansh-singh</a>
+  </div>
+  <p class="footer-end">Bachelor of Computer Applications — AI &amp; ML, Galgotias University · 2022–2025</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
